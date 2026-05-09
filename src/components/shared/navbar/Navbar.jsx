@@ -3,12 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import Logo from '@/assets/Wanderlust.png'
+import NavLinks from './NavLinks';
 const Navbar = () => {
   const links = <ul className='flex items-center gap-5 justify-center'>
-    <li><Link href={'/'}>Home</Link></li>
-    <li><Link href={'/allNav/destinations'}>Destinations</Link></li>
-    <li><Link href={'/allNav/bookings'}>My Bookings</Link></li>
-    <li><Link href={'/allNav/admin'}>Admin</Link></li>
+    <NavLinks href={'/'}>Home</NavLinks>
+    <NavLinks href={'/allNav/destinations'}>Destinations</NavLinks>
+    <NavLinks href={'/allNav/bookings'}>My Bookings</NavLinks>
+    <NavLinks href={'/allNav/admin'}>Admin</NavLinks>
   </ul>
   return (
     <section className='mt-6 bg-base-300'>
