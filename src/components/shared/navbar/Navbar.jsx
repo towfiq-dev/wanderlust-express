@@ -8,6 +8,7 @@ const Navbar = () => {
   const links = <ul className='flex items-center gap-5 justify-center'>
     <NavLinks href={'/'}>Home</NavLinks>
     <NavLinks href={'/allNav/destinations'}>Destinations</NavLinks>
+    <NavLinks href={'/allNav/allDestinations'}>All Destinations</NavLinks>
     <NavLinks href={'/allNav/bookings'}>My Bookings</NavLinks>
     <NavLinks href={'/allNav/admin'}>Admin</NavLinks>
   </ul>

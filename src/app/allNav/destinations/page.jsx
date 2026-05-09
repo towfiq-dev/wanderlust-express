@@ -1,12 +1,36 @@
+'use client'
 import React from 'react';
 import { Button, FieldError, Input, Select, Label, ListBox, TextArea, TextField, Card } from "@heroui/react";
+import { toast } from 'react-toastify';
 
 const DestinationsPage = () => {
+  const onSubmit = async(e)=>{
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const destination = Object.fromEntries(formData.entries())
+    //console.log(destination);
+
+    const res = await fetch('http://localhost:5000/destination', {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(destination)
+
+    })
+    const data = await res.json()
+    if (data) {
+      toast.success('data is added successfully')
+    }else{
+      toast.error('something went wrong. please try again later')
+    }
+    
+  }
   return (
 <div className='mt-10'>
   <h1 className='text-center text-3xl font-bold'>Add Destination</h1>
 <Card className='max-w-250 mx-auto'>
-      <form
+      <form onSubmit={onSubmit}
             className="p-10 space-y-8"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
