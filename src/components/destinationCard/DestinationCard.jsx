@@ -1,17 +1,16 @@
 import Image from 'next/image';
 import React from 'react';
 import { MapPin, Calendar, ArrowUpRight, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const DestinationCard = ({ view }) => {
   const { 
+    _id,
     destinationName, 
     country, 
-    category, 
     price, 
-    duration, 
-    departureDate, 
+    duration,  
     imageUrl, 
-    description 
   } = view;
 
   // Rating jodi data te na thake, default ekta rating dhore nichhi
@@ -59,10 +58,12 @@ const DestinationCard = ({ view }) => {
         </div>
 
         {/* Action Button */}
+        <Link href={`/allNav/allDestinations/${_id}`}>
         <button className="flex items-center gap-1 text-cyan-500 font-bold text-sm tracking-wide hover:text-cyan-600 uppercase transition-colors">
           Book Now 
           <ArrowUpRight className="w-5 h-5" />
         </button>
+        </Link>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const DestinationsPage = () => {
 <div className='mt-10'>
   <h1 className='text-center text-3xl font-bold'>Add Destination</h1>
 <Card className='max-w-250 mx-auto'>
-      <form onSubmit={onSubmit}
+    <form onSubmit={onSubmit}
             className="p-10 space-y-8"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
