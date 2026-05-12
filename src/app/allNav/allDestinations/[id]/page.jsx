@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { Star, Calendar, MapPin, Check, ArrowRight } from 'lucide-react';
 import Modals from '@/components/modal/Modals';
+import BookingCard from '@/components/bookingCard/BookingCard';
 
 const DetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -91,40 +92,7 @@ const DetailsPage = async ({ params }) => {
           </section>
         </div>
 
-        {/* ডান পাশ: বুকিং কার্ড */}
-        <div className="lg:col-span-1">
-          <div className="border border-gray-100 rounded-3xl p-8 shadow-xl sticky top-10 bg-white">
-            <div className="mb-8">
-              <p className="text-gray-500 font-medium mb-1">Starting from</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-cyan-600">${price}</span>
-                <span className="text-gray-400 font-medium text-sm">/ per person</span>
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <label className="block text-sm font-bold text-gray-700 mb-2">Departure Date</label>
-              <div className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 font-semibold">
-                {departureDate || "05/15/2026"}
-              </div>
-            </div>
-
-            <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-lg shadow-cyan-200 mb-8">
-              Book Now <ArrowRight size={22} />
-            </button>
-
-            <div className="space-y-4 pt-6 border-t border-gray-100">
-              <div className="flex items-center gap-3 text-sm text-gray-600">
-                <Check size={18} className="text-green-500" />
-                <span>Free cancellation up to 7 days</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-600">
-                <Check size={18} className="text-green-500" />
-                <span>Travel insurance included</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <BookingCard data={data}/>
 
       </div>
     </div>
